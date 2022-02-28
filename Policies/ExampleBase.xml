@@ -119,6 +119,11 @@
                 <AdminHelpText>Special parameter passed to EvoSTS.</AdminHelpText>
                 <UserHelpText>Special parameter passed to EvoSTS.</UserHelpText>
             </ClaimType>
+
+            <ClaimType Id="isValidAccessCode">
+                <DisplayName>isValidAccessCode</DisplayName>
+                <DataType>boolean</DataType>                
+            </ClaimType>
         </ClaimsSchema>
 
 
