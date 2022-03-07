@@ -4,7 +4,7 @@ env:
   clientId: ef5bf38c-6903-4285-bd7e-be36387a56e4
   tenant: harshaltest.onmicrosoft.com
 
-jobs:
+jobs: 
   build-and-deploy:
     runs-on: ubuntu-latest
     steps: 
