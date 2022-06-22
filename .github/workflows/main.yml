@@ -8,13 +8,25 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps: 
+    # Step 1
     - uses: actions/checkout@v2
 
-    - name: 'Upload TrustFrameworkBase Policy'
-      uses: azure-ad-b2c/deploy-trustframework-policy@v3
+    # Step 2
+    #- name: 'Upload TrustFrameworkBase Policy'
+    #  uses: azure-ad-b2c/deploy-trustframework-policy@v3
+    #  with:
+    #    folder: "./Policies"
+    #    files: "TrustFrameworkBase.xml,TrustFrameworkLocalization.xml,TrustFrameworkExtensions.xml,SignUpOrSignin.xml" 
+    #    tenant: ${{ env.tenant }}
+    #    clientId: ${{ env.clientId }}
+    #    clientSecret: ${{ secrets.clientSecret }}
+
+    # Step 3
+    - name: Deploy Azure AD B2C custom policy
+      uses: azure-ad-b2c/deploy-trustframework-policy@v5.3
       with:
         folder: "./Policies"
-        files: "TrustFrameworkBase.xml,TrustFrameworkLocalization.xml,TrustFrameworkExtensions.xml,SignUpOrSignin.xml" 
+        files: "*" 
         tenant: ${{ env.tenant }}
         clientId: ${{ env.clientId }}
         clientSecret: ${{ secrets.clientSecret }}
